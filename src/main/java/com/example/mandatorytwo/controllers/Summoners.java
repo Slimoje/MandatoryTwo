@@ -42,8 +42,21 @@ public class Summoners {
     public String patchSummonerById(@PathVariable Long id, @RequestBody Summoner summonerToUpdateWith) {
         return summoners.findById(id).map(foundSummoner -> {
             if(summonerToUpdateWith.getSummonerName() != null) foundSummoner.setSummonerName(summonerToUpdateWith.getSummonerName());
-            if(summonerToUpdateWith.getSummonerName() != null) foundSummoner.setSummonerName(summonerToUpdateWith.getSummonerName());
-            if(summonerToUpdateWith.getSummonerName() != null) foundSummoner.setSummonerName(summonerToUpdateWith.getSummonerName());
-        })
+            if(summonerToUpdateWith.getSummonerLevel() != 0) foundSummoner.setSummonerLevel(summonerToUpdateWith.getSummonerLevel());
+
+            summoners.save(foundSummoner);
+            return "Summoner was patched";
+        }).orElse("Summoner not found");
+    }
+
+    @DeleteMapping("/summoners/{id}")
+    public String deleteSummonerById(@PathVariable Long id) {
+        if(summoners.existsById(id)) {
+            String deletedName = summoners.findById(id).get().getSummonerName();
+            summoners.deleteById(id);
+            return (deletedName + "was deleted");
+        } else {
+            return "Summoner not found";
+        }
     }
 }
