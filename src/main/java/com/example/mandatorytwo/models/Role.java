@@ -1,7 +1,7 @@
 package com.example.mandatorytwo.models;
 
 public enum Role {
-    ASSASIN,
+    ASSASSIN,
     FIGHTER,
     MAGE,
     MARKSMAN,
