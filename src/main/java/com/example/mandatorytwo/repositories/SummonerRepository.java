@@ -1,4 +1,4 @@
 package com.example.mandatorytwo.repositories;
 
-public interface ChampionRepository {
+public interface SummonerRepository {
 }
