@@ -1,4 +1,7 @@
 package com.example.mandatorytwo.repositories;
 
-public interface SummonerRepository {
+import com.example.mandatorytwo.models.Summoner;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SummonerRepository extends JpaRepository<Summoner, Long> {
 }
