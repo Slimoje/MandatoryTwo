@@ -27,7 +27,7 @@ public class Champion {
     @Column
     private Difficulty difficulty;
 
-    @Column
+    @Column(length = 2000)
     private String lore;
 
 
