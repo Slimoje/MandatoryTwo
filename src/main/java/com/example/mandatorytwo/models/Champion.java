@@ -30,5 +30,7 @@ public class Champion {
     @Column(length = 2000)
     private String lore;
 
+    @Column(length = 10000)
+    private String image;
 
 }
