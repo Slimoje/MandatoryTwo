@@ -1,6 +1,7 @@
 package com.example.mandatorytwo.models;
 
 import lombok.Data;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 
@@ -25,4 +26,19 @@ public class Contestant {
 
     @Column
     private Enum finalResult;
+
+    @ManyToOne
+    @JoinColumn(name = "champion_id")
+    @Nullable
+    private Champion champion;
+
+    @ManyToOne
+    @JoinColumn(name = "match_id")
+    @Nullable
+    private Match match;
+
+    @ManyToOne
+    @JoinColumn(name = "summoner_id")
+    @Nullable
+    private Summoner summoner;
 }
