@@ -19,12 +19,23 @@ public class Contestants {
     }
 
     @GetMapping("/contestants/{contestantId}")
-    public Optional<Contestant> getContestantById(@PathVariable Long id){
-        return contestants.findById(id);
+    public Optional<Contestant> getContestantById(@PathVariable Long contestantId){
+        return contestants.findById(contestantId);
     }
 
     @PostMapping("/contestants")
     public Contestant addContestant(@RequestBody Contestant contestantBody){
         return contestants.save(contestantBody);
+    }
+
+    @PutMapping("/contestants/{contestantId}")
+    public Contestant updateContestant(@PathVariable Long contestantId, @RequestBody Contestant contestantBody){
+        contestantBody.setId(contestantId);
+        return contestantBody;
+    }
+
+    @DeleteMapping("/contestants/{contestantId}")
+    public void deleteContestant(@PathVariable Long contestantId){
+        contestants.deleteById(contestantId);
     }
 }
