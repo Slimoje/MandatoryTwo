@@ -24,14 +24,17 @@ public class Contestant {
     @Column
     private int assists;
 
+    @Enumerated(value = EnumType.STRING)
     @Column
-    private Enum team;
+    private Team team;
 
+    @Enumerated(value = EnumType.STRING)
     @Column
-    private Enum finalResult;
+    private FinalResult finalResult;
 
+    @Enumerated(value = EnumType.STRING)
     @Column
-    private Enum teamRole;
+    private TeamRole teamRole;
 
     @ManyToOne
     @JoinColumn(name = "champion_id")
