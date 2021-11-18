@@ -5,6 +5,9 @@ import lombok.Data;
 import lombok.Generated;
 
 import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import java.util.Set;
 
 @Data
 @Table(name="Champions")
@@ -32,4 +35,9 @@ public class Champion {
 
     @Column(length = 10000)
     private String image;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "champion", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Set<Contestant> contestants;
+
 }
