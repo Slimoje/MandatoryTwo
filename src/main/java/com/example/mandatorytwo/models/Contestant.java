@@ -22,6 +22,9 @@ public class Contestant {
     private int deaths;
 
     @Column
+    private int assists;
+
+    @Column
     private Enum team;
 
     @Column
