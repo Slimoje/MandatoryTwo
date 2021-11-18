@@ -32,5 +32,4 @@ public class Champion {
 
     @Column(length = 10000)
     private String image;
-
 }
