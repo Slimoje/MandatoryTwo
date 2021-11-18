@@ -18,6 +18,16 @@ public class Contestants {
         return contestants.findAll();
     }
 
+    @GetMapping("/contestants/match/{matchId}")
+    public Iterable<Contestant> getContestantsByMatchId(@PathVariable Long matchId){
+        return contestants.findContestantsByMatch_MatchId(matchId);
+    }
+
+    @GetMapping("/contestants/summoner/{summonerId}")
+    public Iterable<Contestant> getContestantsBySummonerId(@PathVariable Long summonerId){
+        return contestants.findContestantsBySummoner_Id(summonerId);
+    }
+
     @GetMapping("/contestants/{contestantId}")
     public Optional<Contestant> getContestantById(@PathVariable Long contestantId){
         return contestants.findById(contestantId);
