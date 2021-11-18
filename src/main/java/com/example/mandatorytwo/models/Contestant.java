@@ -27,6 +27,9 @@ public class Contestant {
     @Column
     private Enum finalResult;
 
+    @Column
+    private Enum teamRole;
+
     @ManyToOne
     @JoinColumn(name = "champion_id")
     @Nullable
