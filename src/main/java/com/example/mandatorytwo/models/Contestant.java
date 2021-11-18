@@ -24,5 +24,5 @@ public class Contestant {
     private Enum team;
 
     @Column
-    private Enum status;
+    private Enum finalResult;
 }
