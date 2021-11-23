@@ -1,7 +1,9 @@
 package com.example.mandatorytwo.models;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.Generated;
 
@@ -30,7 +32,7 @@ public class Match {
     private WinningTeam winningTeam;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "match", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "match", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Contestant> contestants;
 
 }

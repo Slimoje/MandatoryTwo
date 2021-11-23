@@ -25,7 +25,11 @@ public class Matches {
 
     @GetMapping("/matches/{matchId}")
     public Optional<Match> getMatchById(@PathVariable Long matchId){
-        return matchRepository.findById(matchId);
+        Optional<Match> match = matchRepository.findById(matchId);
+        System.out.println(match);
+        //match.get().setContestants(contestants.findContestantsByMatch_MatchId(matchId));
+        //System.out.println(match);
+        return match;
     }
 
     @PostMapping("/matches")

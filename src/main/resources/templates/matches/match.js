@@ -33,3 +33,7 @@ function addContestantToTeam(contestant){
         blueTeam.push(contestant)
     }
 }
+
+function createContestantCard(contestant){
+
+}
