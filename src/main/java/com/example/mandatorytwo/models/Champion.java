@@ -2,7 +2,6 @@ package com.example.mandatorytwo.models;
 
 
 import lombok.Data;
-import lombok.Generated;
 
 import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;

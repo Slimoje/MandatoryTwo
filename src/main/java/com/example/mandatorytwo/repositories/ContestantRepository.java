@@ -3,8 +3,10 @@ package com.example.mandatorytwo.repositories;
 import com.example.mandatorytwo.models.Contestant;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.Set;
+
 public interface ContestantRepository extends JpaRepository<Contestant, Long> {
-    Iterable<Contestant> findContestantsByMatch_MatchId(Long matchId);
+    Set<Contestant> findContestantsByMatch_MatchId(Long matchId);
 
     Iterable<Contestant> findContestantsBySummoner_Id(Long summonerId);
 }

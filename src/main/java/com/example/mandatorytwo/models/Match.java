@@ -30,7 +30,7 @@ public class Match {
     private WinningTeam winningTeam;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "match", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "match", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Contestant> contestants;
 
 }

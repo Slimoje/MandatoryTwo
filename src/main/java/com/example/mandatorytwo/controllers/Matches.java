@@ -2,9 +2,12 @@ package com.example.mandatorytwo.controllers;
 
 
 import com.example.mandatorytwo.models.Match;
+import com.example.mandatorytwo.repositories.ContestantRepository;
 import com.example.mandatorytwo.repositories.MatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 public class Matches {
@@ -12,14 +15,17 @@ public class Matches {
     @Autowired
     MatchRepository matchRepository;
 
+    @Autowired
+    ContestantRepository contestants;
+
     @GetMapping("/matches")
     public Iterable<Match> getAllMatches(){
         return matchRepository.findAll();
     }
 
-    @GetMapping("/matches/{matchid}")
-    public Match getMatchById(@PathVariable Long matchid){
-        return matchRepository.findById(matchid).get();
+    @GetMapping("/matches/{matchId}")
+    public Optional<Match> getMatchById(@PathVariable Long matchId){
+        return matchRepository.findById(matchId);
     }
 
     @PostMapping("/matches")
