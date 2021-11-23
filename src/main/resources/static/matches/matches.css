@@ -1,0 +1,30 @@
+.match-element{
+    float: left;
+}
+
+.match-button{
+    margin: auto;
+}
+
+#red-team-div{
+    border-right: 3px solid purple;
+    padding-right: 5em;
+}
+
+#red-team-headline{
+    color: red;
+}
+
+#blue-team-div{
+    border-left: 3px solid purple;
+    padding-left: 5em;
+}
+
+#blue-team-headline{
+    color: blue;
+}
+
+#match-body-div{
+    align-items: center;
+    float: left;
+}
