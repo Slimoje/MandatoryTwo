@@ -4,3 +4,64 @@
 body{
     background-color: honeydew;
 }
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+nav{
+    width: 100vw;
+}
+
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+li{
+    list-style-type: none;
+    margin: 0 2vw;
+}
+
+li{
+    list-style-type: none;
+    margin: 0 2vw;
+    font-size: 3vh;
+}
+
+#nav-summoners{
+    text-decoration: none;
+    color: black;
+    padding: 1vw;
+    font-family: monospace;
+}
+
+#nav-matches{
+    text-decoration: none;
+    color: black;
+    padding: 1vw;
+    font-family: monospace;
+}
+
+#nav-champions{
+    text-decoration: none;
+    color: black;
+    padding: 1vw;
+    font-family: monospace;
+}
+
