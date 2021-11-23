@@ -2,9 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="champions.css">
+    <title>Champions</title>
 </head>
 <body>
 
+    <div class = 'search-div'>
+        <input id = "champion-search" placeholder="SEARCH CHAMPION HERE">
+    </div>
+
+    <div class = 'difficulty-dropdown-div'>
+        <select id="difficulty-dropdown">
+            <option value = "" disabled selected>Difficulty selection</option>
+            <option value="ALL-DIFFICULTIES">All difficulties</option>
+            <option value="LOW">Low</option>
+            <option value="MODERATE">Moderate</option>
+            <option value="HIGH">High</option>
+        </select>
+    </div>
+
+    <div class = 'role-dropdown-div'>
+        <select id="role-dropdown">
+            <option value = ""  disabled selected>Role selection</option>
+            <option value="ALL-ROLES">All roles</option>
+            <option value="ASSASSIN">Assassin</option>
+            <option value="FIGHTER">Fighter</option>
+            <option value="MAGE">Mage</option>
+            <option value="MARKSMAN">Marksman</option>
+            <option value="SUPPORT">Support</option>
+            <option value="TANK">Tank</option>
+        </select>
+    </div>
+    <div class = "buttons">
+        <button id="search-role-btn">Search role</button>
+        <button id="search-difficulty-btn">Search difficulty</button>
+    </div>
+    <div id="champion-div"></div>
+
+<script src="/templates/lib/HTMLEscape.js"></script>
+<script src="champions.js"></script>
 </body>
 </html>

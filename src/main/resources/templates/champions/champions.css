@@ -1,0 +1,99 @@
+.difficulty-dropdown-div{
+    text-align: center;
+}
+
+.role-dropdown-div{
+    text-align: center;
+}
+
+.search-div{
+    text-align: center;
+}
+
+#difficulty-dropdown{
+    width:150px;
+    height:50px;
+    font-size:15px
+}
+
+#role-dropdown{
+    width:150px;
+    height:50px;
+    font-size:15px
+}
+
+#champion-search{
+    width:200px;
+    height:50px;
+    font-size:15px
+}
+
+.champion-image{
+    width: 300px;
+    height: 200px;
+}
+
+
+
+#search-difficulty-btn{
+    font-size:20px;
+    text-align: center;
+}
+#search-role-btn{
+    font-size:20px;
+    text-align: center;
+}
+
+#champion-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.buttons{
+    text-align: center;
+}
+
+body{
+    background-color: deepskyblue;
+}
+
+#p-name{
+    text-align: center;
+    font-size: 50px;
+}
+
+#p-lore{
+    text-align: center;
+    font-size: 50px;
+}
+
+#p-role{
+    text-align: center;
+    font-size: 50px;
+}
+
+#p-difficulty{
+    text-align: center;
+    font-size: 50px;
+}
+
+#champion-name{
+    text-align: center;
+    font-size: 40px;
+}
+
+#champion-lore{
+    text-align: center;
+}
+
+#champion-role{
+    text-align: center;
+    font-size: 40px;
+}
+
+#champion-difficulty{
+    text-align: center;
+    font-size: 40px;
+}
