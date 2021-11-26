@@ -1,10 +1,8 @@
 package com.example.mandatorytwo.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonView;
-import lombok.Data;
+import com.example.mandatorytwo.enumAttributes.FinalResult;
+import com.example.mandatorytwo.enumAttributes.Team;
+import com.example.mandatorytwo.enumAttributes.TeamRole;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;

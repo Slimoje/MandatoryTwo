@@ -1,6 +1,8 @@
 package com.example.mandatorytwo.models;
 
 
+import com.example.mandatorytwo.enumAttributes.Difficulty;
+import com.example.mandatorytwo.enumAttributes.Role;
 import lombok.Data;
 
 import javax.persistence.*;

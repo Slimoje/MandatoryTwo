@@ -35,5 +35,6 @@ function addContestantToTeam(contestant){
 }
 
 function createContestantCard(contestant){
-
+    const contestantCardElement = document.createElement("div");
+    contestantCardElement.classList.add("contestant-card");
 }

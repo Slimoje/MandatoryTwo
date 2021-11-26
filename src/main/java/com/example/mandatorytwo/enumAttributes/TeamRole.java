@@ -1,4 +1,4 @@
-package com.example.mandatorytwo.models;
+package com.example.mandatorytwo.enumAttributes;
 
 public enum TeamRole {
     TOP,

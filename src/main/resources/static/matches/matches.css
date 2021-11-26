@@ -6,6 +6,26 @@
     margin: auto;
 }
 
+.contestant-card{
+    width: 28em;
+    height: 7em;
+    border: 3px solid lightblue;
+}
+
+.champion-icon-div{
+    float: left;
+    width: 11.4em;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+
+.champion-icon-image{
+    max-width: 100%;
+}
+
 #red-team-div{
     border-right: 3px solid purple;
     padding-right: 5em;
