@@ -2,6 +2,7 @@ package com.example.mandatorytwo.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import java.util.Set;
