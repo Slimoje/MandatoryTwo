@@ -13,6 +13,7 @@ import java.util.Set;
 public class    Summoner {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
     private String id;
 

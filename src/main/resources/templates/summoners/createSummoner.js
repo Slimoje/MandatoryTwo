@@ -2,8 +2,6 @@ const createSummonerFormDiv = document.getElementById("create-summoner-form");
 const createFormExpandButton = document.getElementById("expand-summoner-form");
 
 const createSummonerForm = `<div>
-    <label>Id</label>
-    <input id="create-summoner-id" placeholder="Id">
     <label>Name</label>
     <input id="create-summoner-name" placeholder="Name">
     <label>Summoner level</label>
@@ -24,7 +22,6 @@ function removeSummonerForm() {
 
 function createSummoner() {
     const summonerToCreate = {
-        id: document.getElementById("create-summoner-id").value,
         summonerName: document.getElementById("create-summoner-name").value,
         summonerLevel: document.getElementById("create-summoner-level").value
     };

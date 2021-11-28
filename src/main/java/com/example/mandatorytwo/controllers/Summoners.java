@@ -23,9 +23,7 @@ public class Summoners {
 
     @PostMapping("/summoners")
     public Summoner addSummoner(@RequestBody Summoner newSummoner) {
-        if(summoners.existsById(newSummoner.getId())) {
-            return summoners.findById(newSummoner.getId()).get();
-        }
+        newSummoner.setId(null);
         return summoners.save(newSummoner);
     }
 
