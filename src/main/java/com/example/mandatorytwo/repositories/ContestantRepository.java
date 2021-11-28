@@ -8,5 +8,5 @@ import java.util.Set;
 public interface ContestantRepository extends JpaRepository<Contestant, Long> {
     Set<Contestant> findContestantsByMatch_MatchId(Long matchId);
 
-    Iterable<Contestant> findContestantsBySummoner_SummonerId(String summonerId);
+    Iterable<Contestant> findContestantsBySummoner_Id(String summonerId);
 }

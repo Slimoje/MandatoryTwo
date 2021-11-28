@@ -4,13 +4,13 @@ fetch(baseURL + "/summoners")
 .then(response => response.json())
 .then(summoners => {
     console.log(summoners);
-    summoners.map(createSummonerTableRow)
+    summoners.map(createSummonerTableRow);
 });
 
 
 function createSummonerTableRow(summoner) {
     const summonerTableRow = document.createElement("tr");
-    summonerTableRow.id = summoner.summonerId;
+    summonerTableRow.id = summoner.id;
 
     summonersTableBody.appendChild(summonerTableRow);
 
@@ -20,7 +20,7 @@ function createSummonerTableRow(summoner) {
 function constructSummonerTableRow(summonerTableRow, summoner) {
     summonerTableRow.innerHTML = `
             <td>
-                <a href="../matches/matches.html?summonerId=${summoner.summonerId}">
+                <a href="../matches/matches.html?summonerId=${summoner.id}">
                     <p class="row-summoner-name">${escapeHTML(summoner.summonerName)}</p>
                 </a>
             </td>
@@ -43,7 +43,7 @@ function constructSummonerTableRow(summonerTableRow, summoner) {
                 <p>WR</p>
             </td>     
             <td>
-                <button onclick="deleteSummoner(${summoner.summonerId})">❌</button>            
+                <button onclick="deleteSummoner(${summoner.id})">❌</button>            
             </td>
         `;
 }
