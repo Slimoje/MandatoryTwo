@@ -10,20 +10,32 @@
 </head>
 <body>
 <nav>
-    <a href="../index.html">
-        <img id="logo" src="https://cdn.icon-icons.com/icons2/3053/PNG/512/league_of_legends_macos_bigsur_icon_190030.png" alt="lol-project-logo">
-    </a>
-    <a href="../summoners/summoners.html">Summoners</a>
-    <a href="../matches/matches.html">Matches</a>
-    <a href="../champions/champions.html">Champions</a>
+
+    <ul>
+        <a href="../index.html">
+            <img id="logo" src="https://cdn.icon-icons.com/icons2/3053/PNG/512/league_of_legends_macos_bigsur_icon_190030.png" alt="lol-project-logo">
+        </a>
+        <li>
+
+        </li>
+        <li>
+            <a id="nav-summoners" href="../summoners/summoners.html">Summoners</a>
+        </li>
+        <li>
+            <a id="nav-matches" href="../matches/matches.html">Matches</a>
+        </li>
+        <li>
+            <a id="nav-champions" href="../champions/champions.html">Champions</a>
+        </li>
+    </ul>
 </nav>
 <div id="match-body-div">
     <button id="edit-match-button" class="match-button">Edit</button>
     <div id="match-div">
-        <div id="red-team-div" class="match-element">
+        <div id="red-team-div" class="team-element">
             <h2 id="red-team-headline" class="team-headline">Red team</h2>
         </div>
-        <div id="blue-team-div" class="match-element">
+        <div id="blue-team-div" class="team-element">
             <h2 id="blue-team-headline" class="team-headline">Blue team</h2>
         </div>
     </div>
@@ -31,6 +43,7 @@
 </div>
 
 <script src="./match.js"></script>
+<script src="./updateMatch.js"></script>
 
 
 </body>

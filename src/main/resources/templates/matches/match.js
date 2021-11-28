@@ -1,6 +1,7 @@
 const matchDivElement = document.getElementById("match-div");
 const redTeamDivElement = document.getElementById("red-team-div");
 const blueTeamDivElement = document.getElementById("blue-team-div");
+let matchToView;
 const redTeam = [];
 const blueTeam = [];
 
@@ -11,6 +12,7 @@ const matchId = urlParams.get("matchId");
 fetch(baseURL+"/matches/"+matchId)
     .then(response => response.json())
     .then(match => {
+        matchToView = match;
         console.log(match);
         match.contestants.map(addContestantToTeam);
         console.log(redTeam);
@@ -53,3 +55,5 @@ function createContestantCard(contestant, teamDivElement){
         `
     teamDivElement.appendChild(contestantCardElement);
 }
+
+document.getElementById("edit-match-button").addEventListener("click", () => console.log("Edit this match"))
