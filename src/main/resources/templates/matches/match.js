@@ -1,4 +1,6 @@
 const matchDivElement = document.getElementById("match-div");
+const redTeamDivElement = document.getElementById("red-team-div");
+const blueTeamDivElement = document.getElementById("blue-team-div");
 const redTeam = [];
 const blueTeam = [];
 
@@ -13,6 +15,12 @@ fetch(baseURL+"/matches/"+matchId)
         match.contestants.map(addContestantToTeam);
         console.log(redTeam);
         console.log(blueTeam);
+        redTeam.map(contestant => {
+            createContestantCard(contestant, redTeamDivElement);
+        })
+        blueTeam.map(contestant => {
+            createContestantCard(contestant, blueTeamDivElement)
+        })
     })
 
 
@@ -29,7 +37,19 @@ function addContestantToTeam(contestant){
     }
 }
 
-function createContestantCard(contestant){
+function createContestantCard(contestant, teamDivElement){
     const contestantCardElement = document.createElement("div");
     contestantCardElement.classList.add("contestant-card");
+    contestantCardElement.innerHTML =
+        `
+        <div class="champion-icon-div">
+            <img class="champion-icon-image" src=${contestant.champion.image}>
+        </div>
+        <div class="summoner-name-and-level">${contestant.summoner.summonerName} - lvl. ${contestant.summoner.summonerLevel}</div>
+        <div class="champion-name">${contestant.champion.name}</div>
+        <div class="team-role">${contestant.teamRole}</div>
+        <div class="k-d-a">K/D/A</div>
+        <div class="k-d-a-value">${contestant.kills}/${contestant.deaths}/${contestant.assists}</div> 
+        `
+    teamDivElement.appendChild(contestantCardElement);
 }
