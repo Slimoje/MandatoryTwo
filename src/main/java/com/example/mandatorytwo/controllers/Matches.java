@@ -1,12 +1,15 @@
 package com.example.mandatorytwo.controllers;
 
 
+import com.example.mandatorytwo.DTO.MatchDTO;
 import com.example.mandatorytwo.models.Match;
 import com.example.mandatorytwo.repositories.ContestantRepository;
 import com.example.mandatorytwo.repositories.MatchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -19,28 +22,35 @@ public class Matches {
     ContestantRepository contestants;
 
     @GetMapping("/matches")
-    public Iterable<Match> getAllMatches(){
-        return matchRepository.findAll();
+    public Iterable<MatchDTO> getAllMatches(){
+        List<Match> matches = matchRepository.findAll();
+        List<MatchDTO> matchDTOs = new ArrayList<>();
+        for (Match match:matches) {
+            matchDTOs.add(new MatchDTO(match));
+        }
+        return matchDTOs;
     }
 
     @GetMapping("/matches/{matchId}")
-    public Optional<Match> getMatchById(@PathVariable Long matchId){
-        Optional<Match> match = matchRepository.findById(matchId);
-        System.out.println(match);
-        //match.get().setContestants(contestants.findContestantsByMatch_MatchId(matchId));
-        //System.out.println(match);
-        return match;
+    public MatchDTO getMatchById(@PathVariable Long matchId){
+        Match match = matchRepository.findById(matchId).get();
+        MatchDTO matchDTO = new MatchDTO(match);
+        return matchDTO;
     }
 
     @PostMapping("/matches")
-    public Match addMatch(@RequestBody Match matchBody){
-        return matchRepository.save(matchBody);
+    public MatchDTO addMatch(@RequestBody Match matchBody){
+        Match match = matchRepository.save(matchBody);
+        MatchDTO matchDTO = new MatchDTO(match);
+        return matchDTO;
     }
 
     @PutMapping("/matches/{matchid}")
-    public Match updateMatch(@PathVariable Long matchid, @RequestBody Match matchBody){
+    public MatchDTO updateMatch(@PathVariable Long matchid, @RequestBody Match matchBody){
         matchBody.setMatchId(matchid);
-        return matchRepository.save(matchBody);
+        Match match = matchRepository.save(matchBody);
+        MatchDTO matchDTO = new MatchDTO(match);
+        return matchDTO;
     }
 
     @DeleteMapping("/matches/{matchid}")

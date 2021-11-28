@@ -9,17 +9,12 @@ const matchId = urlParams.get("matchId");
 fetch(baseURL+"/matches/"+matchId)
     .then(response => response.json())
     .then(match => {
-        console.log(match)
-    })
-
-fetch(baseURL+"/contestants/match/"+matchId)
-    .then(response => response.json())
-    .then(contestants => {
-        console.log(contestants);
-        contestants.map(addContestantToTeam);
+        console.log(match);
+        match.contestants.map(addContestantToTeam);
         console.log(redTeam);
         console.log(blueTeam);
     })
+
 
 
 function createMatchElement(match){
