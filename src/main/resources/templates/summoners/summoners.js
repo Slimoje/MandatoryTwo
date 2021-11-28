@@ -18,6 +18,7 @@ function createSummonerTableRow(summoner) {
 }
 
 function constructSummonerTableRow(summonerTableRow, summoner) {
+    const summonerId = summoner.id;
     summonerTableRow.innerHTML = `
             <td>
                 <a href="../matches/matches.html?summonerId=${summoner.id}">
@@ -43,7 +44,19 @@ function constructSummonerTableRow(summonerTableRow, summoner) {
                 <p>WR</p>
             </td>     
             <td>
-                <button onclick="deleteSummoner(${summoner.id})">❌</button>            
+                <button onclick="deleteSummoner(${summonerId})">❌</button>            
             </td>
         `;
+}
+
+function deleteSummoner(summonerId) {
+    fetch("http://localhost:8080/summoners/" + summonerId, {
+        method: "DELETE"
+    }).then(response => {
+        if(response.status === 200) {
+            document.getElementById(summonerId).remove();
+        } else {
+            console.log(response.status);
+        }
+    });
 }

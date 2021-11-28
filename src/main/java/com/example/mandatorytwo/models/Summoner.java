@@ -10,11 +10,11 @@ import java.util.Set;
 @Data
 @Table(name="summoners")
 @Entity
-public class Summoner {
+public class    Summoner {
 
     @Id
     @Column
-    private Long id;
+    private String id;
 
     @Column
     private String summonerName;
@@ -22,6 +22,7 @@ public class Summoner {
     @Column
     private int summonerLevel;
 
+    @Nullable
     @JsonIgnore
     @OneToMany(mappedBy = "summoner", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<Contestant> contestants;

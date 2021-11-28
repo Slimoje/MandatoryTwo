@@ -1,9 +1,9 @@
-const createSummonerDiv = document.getElementById("create-summoner-form");
+const createSummonerFormDiv = document.getElementById("create-summoner-form");
 const createFormExpandButton = document.getElementById("expand-summoner-form");
 
 const createSummonerForm = `<div>
     <label>Id</label>
-    <input type="number" id="create-summoner-id" placeholder="Id">
+    <input id="create-summoner-id" placeholder="Id">
     <label>Name</label>
     <input id="create-summoner-name" placeholder="Name">
     <label>Summoner level</label>
@@ -14,12 +14,12 @@ const createSummonerForm = `<div>
 
 function showNewSummonerForm() {
     createFormExpandButton.style.display = "none";
-    createSummonerDiv.innerHTML = createSummonerForm;
+    createSummonerFormDiv.innerHTML = createSummonerForm;
 }
 
 function removeSummonerForm() {
     createFormExpandButton.style.display = "block";
-    createSummonerDiv.innerHTML = "";
+    createSummonerFormDiv.innerHTML = "";
 }
 
 function createSummoner() {

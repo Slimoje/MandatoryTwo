@@ -24,7 +24,7 @@ public class Contestants {
     }
 
     @GetMapping("/contestants/summoner/{summonerId}")
-    public Iterable<Contestant> getContestantsBySummonerId(@PathVariable Long summonerId){
+    public Iterable<Contestant> getContestantsBySummonerId(@PathVariable String summonerId){
         return contestants.findContestantsBySummoner_Id(summonerId);
     }
 

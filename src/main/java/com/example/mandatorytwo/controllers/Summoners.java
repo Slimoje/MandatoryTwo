@@ -17,7 +17,7 @@ public class Summoners {
     }
 
     @GetMapping("/summoners/{id}")
-    public Summoner getArtistById(@PathVariable Long id) {
+    public Summoner getArtistById(@PathVariable String id) {
         return summoners.findById(id).get();
     }
 
@@ -30,7 +30,7 @@ public class Summoners {
     }
 
     @PutMapping("/summoners/{id}")
-    public String updateSummonerById(@PathVariable Long id, @RequestBody Summoner summonerToUpdateWith) {
+    public String updateSummonerById(@PathVariable String id, @RequestBody Summoner summonerToUpdateWith) {
         if (summoners.existsById(id)) {
             summonerToUpdateWith.setId(id);
             summoners.save(summonerToUpdateWith);
@@ -41,7 +41,7 @@ public class Summoners {
     }
 
     @PatchMapping("/summoners/{id}")
-    public String patchSummonerById(@PathVariable Long id, @RequestBody Summoner summonerToUpdateWith) {
+    public String patchSummonerById(@PathVariable String id, @RequestBody Summoner summonerToUpdateWith) {
         return summoners.findById(id).map(foundSummoner -> {
             if(summonerToUpdateWith.getSummonerName() != null) foundSummoner.setSummonerName(summonerToUpdateWith.getSummonerName());
             if(summonerToUpdateWith.getSummonerLevel() != 0) foundSummoner.setSummonerLevel(summonerToUpdateWith.getSummonerLevel());
@@ -52,11 +52,11 @@ public class Summoners {
     }
 
     @DeleteMapping("/summoners/{id}")
-    public String deleteSummonerById(@PathVariable Long id) {
+    public String deleteSummonerById(@PathVariable String id) {
         if(summoners.existsById(id)) {
             String deletedName = summoners.findById(id).get().getSummonerName();
             summoners.deleteById(id);
-            return (deletedName + "was deleted");
+            return (deletedName + " was deleted");
         } else {
             return "Summoner not found";
         }
