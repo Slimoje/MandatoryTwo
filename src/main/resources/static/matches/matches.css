@@ -26,6 +26,18 @@
     max-width: 100%;
 }
 
+.winning-team{
+    color: lime;
+}
+
+.losing-team{
+    color: orangered;
+}
+
+.KDA-input-field{
+    width: 30px;
+}
+
 #red-team-div{
     border-right: 3px solid purple;
     padding-right: 5em;
@@ -48,3 +60,4 @@
     align-items: center;
     float: left;
 }
+
