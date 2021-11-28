@@ -23,8 +23,8 @@ public class Summoners {
 
     @PostMapping("/summoners")
     public Summoner addSummoner(@RequestBody Summoner newSummoner) {
-        if(summoners.existsById(newSummoner.getId())) {
-            return summoners.findById(newSummoner.getId()).get();
+        if(summoners.existsById(newSummoner.getSummonerId())) {
+            return summoners.findById(newSummoner.getSummonerId()).get();
         }
         return summoners.save(newSummoner);
     }
@@ -32,7 +32,7 @@ public class Summoners {
     @PutMapping("/summoners/{id}")
     public String updateSummonerById(@PathVariable String id, @RequestBody Summoner summonerToUpdateWith) {
         if (summoners.existsById(id)) {
-            summonerToUpdateWith.setId(id);
+            summonerToUpdateWith.setSummonerId(id);
             summoners.save(summonerToUpdateWith);
             return "Summoner was updated";
         } else {

@@ -4,13 +4,13 @@ fetch(baseURL + "/summoners")
 .then(response => response.json())
 .then(summoners => {
     console.log(summoners);
-    summoners.map(createSummonerTableRow);
+    summoners.map(createSummonerTableRow)
 });
 
 
 function createSummonerTableRow(summoner) {
     const summonerTableRow = document.createElement("tr");
-    summonerTableRow.id = summoner.id;
+    summonerTableRow.id = summoner.summonerId;
 
     summonersTableBody.appendChild(summonerTableRow);
 
@@ -18,10 +18,9 @@ function createSummonerTableRow(summoner) {
 }
 
 function constructSummonerTableRow(summonerTableRow, summoner) {
-    const summonerId = summoner.id;
     summonerTableRow.innerHTML = `
             <td>
-                <a href="../matches/matches.html?summonerId=${summoner.id}">
+                <a href="../matches/matches.html?summonerId=${summoner.summonerId}">
                     <p class="row-summoner-name">${escapeHTML(summoner.summonerName)}</p>
                 </a>
             </td>
@@ -44,12 +43,13 @@ function constructSummonerTableRow(summonerTableRow, summoner) {
                 <p>WR</p>
             </td>     
             <td>
-                <button onclick="deleteSummoner(${summonerId})">❌</button>            
+                <button onclick="deleteSummoner(${summoner.summonerId})">❌</button>            
             </td>
         `;
 }
 
 function deleteSummoner(summonerId) {
+    console.log(summonerId);
     fetch("http://localhost:8080/summoners/" + summonerId, {
         method: "DELETE"
     }).then(response => {

@@ -14,7 +14,7 @@ public class    Summoner {
 
     @Id
     @Column
-    private String id;
+    private String summonerId;
 
     @Column
     private String summonerName;

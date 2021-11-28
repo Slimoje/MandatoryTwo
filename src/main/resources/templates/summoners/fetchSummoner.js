@@ -28,7 +28,7 @@ function fetchSummoner() {
     .then(response => response.json())
     .then(summoner => {
         const fecthedSummoner = {
-            id: summoner.id,
+            id: summoner.summonerId,
             summonerName: summoner.name,
             summonerLevel: summoner.summonerLevel
         };
@@ -39,7 +39,7 @@ function fetchSummoner() {
         }).then(response => response.json())
             .then(summoner => {
                 createSummonerTableRow(summoner);
-                removeSummonerForm();
+                removeFetchForm();
             }).catch(error => console.log(error));
     });
 }
