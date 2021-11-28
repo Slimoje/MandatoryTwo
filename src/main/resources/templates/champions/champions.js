@@ -15,8 +15,6 @@ console.log(createChampionCard)
 function createChampionCard(champion){
     const championElement = document.createElement("div")
     championElement.innerHTML = `
-        <p>${escapeHTML(champion.name)}</p>
-        <p>${escapeHTML(champion.role)}</p>
         <a href = "./champion.html?championId=${champion.championId}">
             <img class = "champion-image" src="${champion.image}">
         </a>
