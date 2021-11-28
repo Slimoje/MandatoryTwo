@@ -28,7 +28,7 @@ function fetchSummoner() {
     .then(response => response.json())
     .then(summoner => {
         const fecthedSummoner = {
-            id: summoner.Id,
+            id: summoner.id,
             summonerName: summoner.name,
             summonerLevel: summoner.summonerLevel
         };
