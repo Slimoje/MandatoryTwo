@@ -2,6 +2,7 @@ package com.example.mandatorytwo.controllers;
 
 
 import com.example.mandatorytwo.DTO.MatchDTO;
+import com.example.mandatorytwo.models.Contestant;
 import com.example.mandatorytwo.models.Match;
 import com.example.mandatorytwo.repositories.ContestantRepository;
 import com.example.mandatorytwo.repositories.MatchRepository;
@@ -36,6 +37,8 @@ public class Matches {
     public MatchDTO getMatchById(@PathVariable Long matchId){
         Match match = matchRepository.findById(matchId).get();
         MatchDTO matchDTO = new MatchDTO(match);
+        System.out.println(match.getWinningTeam());
+        System.out.println(matchDTO.getWinningTeam());
         return matchDTO;
     }
 
@@ -49,6 +52,7 @@ public class Matches {
     @PutMapping("/matches/{matchid}")
     public MatchDTO updateMatch(@PathVariable Long matchid, @RequestBody Match matchBody){
         matchBody.setMatchId(matchid);
+        contestants.saveAll(matchBody.getContestants());
         Match match = matchRepository.save(matchBody);
         MatchDTO matchDTO = new MatchDTO(match);
         return matchDTO;

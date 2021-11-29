@@ -20,7 +20,7 @@ public class MatchDTO {
         matchId = match.getMatchId();
         startTime = match.getStartTime();
         startDate = match.getStartDate();
-        winningTeam = getWinningTeam();
+        winningTeam = match.getWinningTeam();
         contestants = match.getContestants();
     }
 
